@@ -5,9 +5,11 @@ A simple concurrent CLI tool written in Go that extracts and validates HTTP/HTTP
 ## Features
 - Standard library only.
 - Worker pool pattern for concurrency.
-- Configurable worker limit and target directory.
+- Configurable worker limit, target directory, and HTTP timeout.
+- Verbose mode to print dead URLs as they are discovered.
+- Efficient deduplication of URLs before sending requests.
 
 ## Usage
 ```
-go run main.go -dir /path/to/markdown/files -workers 10
+go run main.go -dir /path/to/markdown/files -workers 10 -timeout 5s -verbose
 ```
